@@ -20,11 +20,11 @@
 /****************************************************************************
  *                              COMPAT                                      *
  ****************************************************************************/
-#undef NO_ADD_ACTION
+#define NO_ADD_ACTION
 #undef NO_SNOOP
 #undef NO_ENVIRONMENT
 #undef NO_WIZARDS
-#undef NO_LIGHT
+#define NO_LIGHT
 #define OLD_ED
 #undef ED_INDENT_CASE
 #define ED_INDENT_SPACES 4

@@ -14,7 +14,7 @@
 
 #include "base/package_api.h"
 
-/* ¨ú¥N­ì¦³ find_player() */
+/* å–ä»£åŸæœ‰ find_player() */
 #ifdef NO_ADD_ACTION
 void f_find_player () {
 
@@ -50,8 +50,8 @@ void f_find_player () {
 #endif
 
 /*
-  Added by Clode@RW 2001/10/8 05:37¤U¤È
-  ¥Î¨Ó¤¤¤î¤@­Ó¤¬°Êª«¥óªº input_to ª¬ºA
+  Added by Clode@RW 2001/10/8 05:37ä¸‹åˆ
+  ç”¨ä¾†ä¸­æ­¢ä¸€å€‹äº’å‹•ç‰©ä»¶çš„ input_to ç‹€æ…‹
 */
 #ifdef F_REMOVE_INPUT_TO
 void f_remove_input_to ()
@@ -74,7 +74,7 @@ void f_remove_input_to ()
 #endif
 
 /*
-  ²Î¤@³]©w¨t²Î HEARTBEAT_INTERVAL °ò·Ç
+  çµ±ä¸€è¨­å®šç³»çµ± HEARTBEAT_INTERVAL åŸºæº–
 */
 /*
 #ifdef F_SET_HEARTBEAT_INTERVAL

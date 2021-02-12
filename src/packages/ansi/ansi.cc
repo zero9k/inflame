@@ -29,9 +29,8 @@ static int combine_ansi (char ** ret, char * str, char ** ansi_table, int * flag
 static char *rally_ansi (char * str);
 
 //
-// Âo°£ \0 ¦Ü \x20 ¤§¶¡ªº±±¨î¦r¤¸
-// ¨Ã¨Ì·Ó¤Wªí±N¯S©w¦r¦êÂà´«¦¨ ANSI ¦â½X
-// Written by Clode@Revival World 2001/07/10
+// æ¸…é™¤ \0 è‡³ \x20 ä¹‹é—´çš„æ§åˆ¶å­—å…ƒ
+// å¹¶ä¾ç…§ä¸Šè¡¨å°†ç‰¹å®šå­—ä¸²è½¬æ¢æˆ ANSI è‰²ç 
 //
 #ifdef F_ANSI
 void f_ansi () {
@@ -120,7 +119,7 @@ void f_ansi () {
 #endif
 
 //
-// ²¾°£¤@­Ó¦r¦ê¤¤©Ò¦³ªº ANSI ¦â½X
+// ç§»é™¤ä¸€å€‹å­—ä¸²ä¸­æ‰€æœ‰çš„ ANSI è‰²ç¢¼
 // Written by Clode@RevivalWorld on 2001/07/11
 //
 #ifdef F_REMOVE_ANSI
@@ -164,7 +163,7 @@ void f_remove_ansi () {
 #endif
 
 //
-// ¦^¶Ç¤@­Ó¦r¦ê¤£¥]§t ANSI ¦â½X®Éªºªø«×
+// å›å‚³ä¸€å€‹å­—ä¸²ä¸åŒ…å« ANSI è‰²ç¢¼æ™‚çš„é•·åº¦
 // Written by Clode@RW on 2001/07/11
 //
 #ifdef F_NOANSI_STRLEN
@@ -198,7 +197,7 @@ void f_noansi_strlen () {
 #endif
 
 //
-// Âo°£­«ÂĞ¥B¤£¥²­nªº ANSI ¦â½X¨Ã±N¦h²Õ¦â½X²Õ¦X°_¨Ó¥H´î§Cºô¸ôÀW¼e­t¸ü
+// æ¿¾é™¤é‡è¦†ä¸”ä¸å¿…è¦çš„ ANSI è‰²ç¢¼ä¸¦å°‡å¤šçµ„è‰²ç¢¼çµ„åˆèµ·ä¾†ä»¥æ¸›ä½ç¶²è·¯é »å¯¬è² è¼‰
 // Written by Clode@RW on 2002/02/16
 //
 #ifdef F_KILL_REPEAT_ANSI
@@ -219,7 +218,7 @@ void f_kill_repeat_ansi () {
 #endif
 
 //
-// ¨ú¥X¤@­Ó¦r¦ê¤¤ªº ANSI ¦â½X
+// å–å‡ºä¸€å€‹å­—ä¸²ä¸­çš„ ANSI è‰²ç¢¼
 // Written by Clode@RW on 2002/02/16
 //
 #ifdef F_ANSI_PART
@@ -268,7 +267,7 @@ void f_ansi_part () {
 #endif
 
 //
-// ±N¤@­Ó¦r¦ê¤¤ ANSI "­I´º¦â½X" ²¾°£
+// å°‡ä¸€å€‹å­—ä¸²ä¸­ ANSI "èƒŒæ™¯è‰²ç¢¼" ç§»é™¤
 // Written by Clode@RW on 2002/02/16
 //
 #ifdef F_REMOVE_BG_ANSI
@@ -351,18 +350,18 @@ static int combine_ansi (char ** ret, char * str, char ** ansi_table, int * flag
 
 	while(str[i]=='\x1B')
 	{
-		/* ­Y±µ¤U¨Ó¨ÃµL¦r¤¸, ©Î¦r¤¸¤£¬O [, «hÂ÷¶} combine_ansi */
+		/* è‹¥æ¥ä¸‹ä¾†ä¸¦ç„¡å­—å…ƒ, æˆ–å­—å…ƒä¸æ˜¯ [, å‰‡é›¢é–‹ combine_ansi */
 		if( !str[++i] || str[i] != '[' ) break;
 
 		i++;
 
-		/* ¤Z¬O ; ©Î [ ©Î 0 ¤@«ß²¤¹L */
+		/* å‡¡æ˜¯ ; æˆ– [ æˆ– 0 ä¸€å¾‹ç•¥é */
 		while(str[i] && (str[i] == ';' || str[i] == '[' || str[i] =='0')) i++;
 
-		/* ­Y²Ä¤@­Ó¦r¤¸´N¬O m ªº¸Ü, «h²MªÅ ansi_table */
+		/* è‹¥ç¬¬ä¸€å€‹å­—å…ƒå°±æ˜¯ m çš„è©±, å‰‡æ¸…ç©º ansi_table */
 		if( str[i] == 'm' )
 		{
-			/* ²MªÅansi_table */
+			/* æ¸…ç©ºansi_table */
 			for(j=0;j<ANSI_CAP;j++)
 				*ansi_table[j] = *(ansi_table[j]+1) = 0;
 
@@ -375,7 +374,7 @@ static int combine_ansi (char ** ret, char * str, char ** ansi_table, int * flag
 			continue;
 		}
 
-		/* ¹ï¤@­Ó ansi ¤º®e¶i¦æ loop */
+		/* å°ä¸€å€‹ ansi å…§å®¹é€²è¡Œ loop */
 		while(str[i])
 		{
 			while(str[i] && str[i] == ';') i++;
@@ -384,14 +383,14 @@ static int combine_ansi (char ** ret, char * str, char ** ansi_table, int * flag
 			{
 				if( str[i] == '0' )
 				{
-					/* ²MªÅansi_table */
+					/* æ¸…ç©ºansi_table */
 					for(j=0;j<ANSI_CAP;j++)
 						*ansi_table[j] = *(ansi_table[j]+1) = 0;
 				}
 
 				else for(j=0;j<ANSI_CAP;j++)
 				{
-					/* ÀË¬d¬O§_¤w¦³¬Û¦P ansi_elem */
+					/* æª¢æŸ¥æ˜¯å¦å·²æœ‰ç›¸åŒ ansi_elem */
 
 					if( *ansi_table[j] )
 					{

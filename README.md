@@ -20,12 +20,14 @@ $ cd inflame
 # Upgrade cmake
 $ sudo pip install --upgrade cmake
 
-# Modify src/local_options, pay attention to the following: 
+# Modify src/local_options, pay attention to the following:
 # 1. NO_ADD_ACTION
 # 2. NO_LIGHT
 # 3. SENSIBLE_MODIFIERS
 # 4. PRIVS
 # 5. USE_ICONV
+
+# Modify src/CMakeLists.txt for Package options.
 
 # Build
 $ mkdir build

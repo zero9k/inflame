@@ -11,7 +11,7 @@
  -----------------------------------------
  */
 
- #include "base/package_api.h"
+#include "base/package_api.h"
 
 static char *remove_leading_zero (char * num) {
 
@@ -75,13 +75,13 @@ static void itoa (svalue_t * sp) {
 	}
 }
 
-/* ¼Æ­È¤ñ¸û¹Bºâ¤l¨ç¦¡ ">" "<" ">=" "<=" "==" */
+/* æ•¸å€¼æ¯”è¼ƒé‹ç®—å­å‡½å¼ ">" "<" ">=" "<=" "==" */
 /*
 	< 	:	1
 	>	:	2
 	=	:	4
 */
-/* n1, n2 : ¥¿¾ã¼Æ */
+/* n1, n2 : æ­£æ•´æ•¸ */
 static int compare_value (int negative1, char * n1, int negative2, char * n2, const char * op) {
 
 	int i=0, n1_len, n2_len, flag=0;
@@ -187,8 +187,8 @@ static int compare_value (int negative1, char * n1, int negative2, char * n2, co
 	return 0;
 }
 
-/* ¥[ªk³B²z¨ç¦¡ */
-/* n1, n2 : ¥¿¾ã¼Æ */
+/* åŠ æ³•è™•ç†å‡½å¼ */
+/* n1, n2 : æ­£æ•´æ•¸ */
 static char *addition (char * n1, char * n2) {
 
 	int i, j, k, carry=0;
@@ -237,8 +237,8 @@ static char *addition (char * n1, char * n2) {
 	return ret;
 }
 
-/* ´îªk³B²z¨ç¦¡ */
-/* n1 : ¤j¥¿¾ã¼Æ, n2 : ¤p¥¿¾ã¼Æ */
+/* æ¸›æ³•è™•ç†å‡½å¼ */
+/* n1 : å¤§æ­£æ•´æ•¸, n2 : å°æ­£æ•´æ•¸ */
 static char *subtraction (char * n1, char * n2) {
 
 	int i, j, k, carry=0;
@@ -272,8 +272,8 @@ static char *subtraction (char * n1, char * n2) {
    	return ret;
 }
 
-/* ­¼ªk³B²z¨ç¦¡ */
-/* n1, n2 : ¥¿¾ã¼Æ */
+/* ä¹˜æ³•è™•ç†å‡½å¼ */
+/* n1, n2 : æ­£æ•´æ•¸ */
 static char *multiplication (char * n1, char * n2) {
 
 	int i, j, carry=0;
@@ -319,8 +319,8 @@ static char *multiplication (char * n1, char * n2) {
 	return ret;
 }
 
-/* °£ªk³B²z¨ç¦¡ */
-/* n1 : ¤j¥¿¾ã¼Æ(³Q°£¼Æ), n2 : ¤p¥¿¾ã¼Æ(°£¼Æ) */
+/* é™¤æ³•è™•ç†å‡½å¼ */
+/* n1 : å¤§æ­£æ•´æ•¸(è¢«é™¤æ•¸), n2 : å°æ­£æ•´æ•¸(é™¤æ•¸) */
 static char *division (char * n1, char * n2) {
 
 	int i, j, k=0, carry=0;
@@ -330,7 +330,7 @@ static char *division (char * n1, char * n2) {
    	n1_len = strlen(n1);
    	n2_len = strlen(n2);
 
-   	if( !n2[0] || n2[0] == 48 ) error("(division) °£¼Æ¬° 0");
+   	if( !n2[0] || n2[0] == 48 ) error("(division) é™¤æ•¸ç‚º 0");
 
    	tmp = (char *)DMALLOC(n2_len+2, TAG_STRING, "division 1");
    	ret = (char *)DMALLOC(n1_len+2, TAG_STRING, "division 2");
@@ -557,6 +557,6 @@ void f_count() {
 			return;
 		}
 
-		default: error("¹Bºâ¤l¿ù»~ : +, -, *, /, >, >=, <, <=, =="); break;
+		default: error("é‹ç®—å­éŒ¯èª¤ : +, -, *, /, >, >=, <, <=, =="); break;
 	}
 }

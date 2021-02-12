@@ -54,7 +54,7 @@ void f_set () {
     if (i == -1)
     {
        	pop_2_elems();
-        error("(set) %s ª«¥ó¥¼«Å§i¥þ°ì¬M®g¸ê®Æ®wÅÜ¼Æ¡C\n", ob->obname);
+        error("(set) %s ç‰©ä»¶æœªå®£å‘Šå…¨åŸŸæ˜ å°„è³‡æ–™åº«è®Šæ•¸ã€‚\n", ob->obname);
     }
 
     dbase = &ob->variables[i];
@@ -62,7 +62,7 @@ void f_set () {
     if( dbase->type != T_MAPPING )
     {
     	pop_2_elems();
-    	error("(set) %s ª«¥óªº¸ê®Æ®wÅÜ¼Æ«¬ºA¿ù»~¡C\n", ob->obname);
+    	error("(set) %s ç‰©ä»¶çš„è³‡æ–™åº«è®Šæ•¸åž‹æ…‹éŒ¯èª¤ã€‚\n", ob->obname);
     }
 
     map = dbase->u.map;
@@ -76,7 +76,7 @@ void f_set () {
     	if( ++j > 20 )
 	{
     		pop_2_elems();
-    		error("(set) %s too deep mapping(20)¡C\n", ob->obname);
+    		error("(set) %s too deep mapping(20)ã€‚\n", ob->obname);
     	}
 
 	while (*src != '/' && *src)
@@ -144,7 +144,7 @@ void f_set_temp () {
     if (i == -1)
     {
         pop_2_elems();
-        error("(set_temp) %s ª«¥ó¥¼«Å§i¥þ°ì¬M®g¸ê®Æ®wÅÜ¼Æ¡C\n", ob->obname);
+        error("(set_temp) %s ç‰©ä»¶æœªå®£å‘Šå…¨åŸŸæ˜ å°„è³‡æ–™åº«è®Šæ•¸ã€‚\n", ob->obname);
     }
 
     dbase = &ob->variables[i];
@@ -152,7 +152,7 @@ void f_set_temp () {
     if( dbase->type != T_MAPPING )
     {
     	pop_2_elems();
-    	error("(set_temp) %s ª«¥óªº¸ê®Æ®wÅÜ¼Æ«¬ºA¿ù»~¡C\n", ob->obname);
+    	error("(set_temp) %s ç‰©ä»¶çš„è³‡æ–™åº«è®Šæ•¸åž‹æ…‹éŒ¯èª¤ã€‚\n", ob->obname);
     }
 
     map = dbase->u.map;
@@ -166,7 +166,7 @@ void f_set_temp () {
     	if( ++j > 20 )
 	{
     		pop_2_elems();
-    		error("(set_temp) %s too deep mapping(20)¡C\n", ob->obname);
+    		error("(set_temp) %s too deep mapping(20)ã€‚\n", ob->obname);
     	}
 
 	while (*src != '/' && *src)
@@ -212,8 +212,8 @@ void f_set_temp () {
 // query()
 // by Clode@Repulsion.World on 2000/10/29
 //
-// ¦h¼h¦¸ mapping µ²ºc·j´M
-// °O¾ÐÅé¸`¬Ù¾÷¨î shadow_ob ÀË¬d
+// å¤šå±¤æ¬¡ mapping çµæ§‹æœå°‹
+// è¨˜æ†¶é«”ç¯€çœæ©Ÿåˆ¶ shadow_ob æª¢æŸ¥
 //
 
 #ifdef F_QUERY
@@ -246,7 +246,7 @@ void f_query () {
     if( value->type != T_MAPPING )
     {
     	free_string_svalue(sp--);
-    	error("(query) %s ª«¥óªº¸ê®Æ®wÅÜ¼Æ«¬ºA¿ù»~¡C\n", ob->obname);
+    	error("(query) %s ç‰©ä»¶çš„è³‡æ–™åº«è®Šæ•¸åž‹æ…‹éŒ¯èª¤ã€‚\n", ob->obname);
     }
 
     shadow = find_string_in_mapping(value->u.map, "shadow_ob");
@@ -301,7 +301,7 @@ void f_query () {
 // query_temp()
 // by Clode@Repulsion.World on 2000/10/29
 //
-// ¦h¼h¦¸ mapping µ²ºc·j´M
+// å¤šå±¤æ¬¡ mapping çµæ§‹æœå°‹
 //
 #ifdef F_QUERY_TEMP
 void f_query_temp () {
@@ -331,7 +331,7 @@ void f_query_temp () {
     if( value->type != T_MAPPING )
     {
     	free_string_svalue(sp--);
-    	error("(query_temp) %s ª«¥óªº¸ê®Æ®wÅÜ¼Æ«¬ºA¿ù»~¡C\n", ob->obname);
+    	error("(query_temp) %s ç‰©ä»¶çš„è³‡æ–™åº«è®Šæ•¸åž‹æ…‹éŒ¯èª¤ã€‚\n", ob->obname);
     }
 
     map = value->u.map;
@@ -392,7 +392,7 @@ void f_addn () {
     if (i == -1)
     {
         pop_2_elems();
-        error("(addn) %s ª«¥ó¥¼«Å§i¥þ°ì¬M®g¸ê®Æ®wÅÜ¼Æ¡C\n", ob->obname);
+        error("(addn) %s ç‰©ä»¶æœªå®£å‘Šå…¨åŸŸæ˜ å°„è³‡æ–™åº«è®Šæ•¸ã€‚\n", ob->obname);
     }
 
     value = &ob->variables[i];
@@ -400,7 +400,7 @@ void f_addn () {
     if( value->type != T_MAPPING )
     {
     	pop_2_elems();
-    	error("(addn) %s ª«¥óªº¸ê®Æ®wÅÜ¼Æ«¬ºA¿ù»~¡C\n", ob->obname);
+    	error("(addn) %s ç‰©ä»¶çš„è³‡æ–™åº«è®Šæ•¸åž‹æ…‹éŒ¯èª¤ã€‚\n", ob->obname);
     }
 
     map = value->u.map;
@@ -414,7 +414,7 @@ void f_addn () {
     	if( ++j > 20 )
 	{
     		pop_2_elems();
-    		error("(addn) %s too deep mapping(20)¡C\n", ob->obname);
+    		error("(addn) %s too deep mapping(20)ã€‚\n", ob->obname);
     	}
 
 	while (*src != '/' && *src)
@@ -487,7 +487,7 @@ void f_addn_temp () {
     if (i == -1)
     {
         pop_2_elems();
-        error("(addn_temp) %s ª«¥ó¥¼«Å§i¥þ°ì¬M®g¸ê®Æ®wÅÜ¼Æ¡C\n", ob->obname);
+        error("(addn_temp) %s ç‰©ä»¶æœªå®£å‘Šå…¨åŸŸæ˜ å°„è³‡æ–™åº«è®Šæ•¸ã€‚\n", ob->obname);
     }
 
     value = &ob->variables[i];
@@ -495,7 +495,7 @@ void f_addn_temp () {
     if( value->type != T_MAPPING )
     {
     	pop_2_elems();
-    	error("(addn_temp) %s ª«¥óªº¸ê®Æ®wÅÜ¼Æ«¬ºA¿ù»~¡C\n", ob->obname);
+    	error("(addn_temp) %s ç‰©ä»¶çš„è³‡æ–™åº«è®Šæ•¸åž‹æ…‹éŒ¯èª¤ã€‚\n", ob->obname);
     }
 
     map = value->u.map;
@@ -509,7 +509,7 @@ void f_addn_temp () {
     	if( ++j > 20 )
 	{
     		pop_2_elems();
-    		error("(addn_temp) %s too deep mapping(20)¡C\n", ob->obname);
+    		error("(addn_temp) %s too deep mapping(20)ã€‚\n", ob->obname);
     	}
 
 	while (*src != '/' && *src)
@@ -581,7 +581,7 @@ void f_delete () {
     if (i == -1)
     {
         free_string_svalue(sp--);
-        error("(delete) %s ª«¥ó¥¼«Å§i¥þ°ì¬M®g¸ê®Æ®wÅÜ¼Æ¡C\n", ob->obname);
+        error("(delete) %s ç‰©ä»¶æœªå®£å‘Šå…¨åŸŸæ˜ å°„è³‡æ–™åº«è®Šæ•¸ã€‚\n", ob->obname);
     }
 
     value = &ob->variables[i];
@@ -589,7 +589,7 @@ void f_delete () {
     if( value->type != T_MAPPING )
     {
         free_string_svalue(sp--);
-    	error("(delete) %s ª«¥óªº¸ê®Æ®wÅÜ¼Æ«¬ºA¿ù»~¡C\n", ob->obname);
+    	error("(delete) %s ç‰©ä»¶çš„è³‡æ–™åº«è®Šæ•¸åž‹æ…‹éŒ¯èª¤ã€‚\n", ob->obname);
     }
 
     map = value->u.map;
@@ -660,7 +660,7 @@ void f_delete_temp () {
     if (i == -1)
     {
         free_string_svalue(sp--);
-        error("(delete_temp) %s ª«¥ó¥¼«Å§i¥þ°ì¬M®g¸ê®Æ®wÅÜ¼Æ¡C\n", ob->obname);
+        error("(delete_temp) %s ç‰©ä»¶æœªå®£å‘Šå…¨åŸŸæ˜ å°„è³‡æ–™åº«è®Šæ•¸ã€‚\n", ob->obname);
     }
 
     value = &ob->variables[i];
@@ -668,7 +668,7 @@ void f_delete_temp () {
     if( value->type != T_MAPPING )
     {
         free_string_svalue(sp--);
-    	error("(delete_temp) %s ª«¥óªº¸ê®Æ®wÅÜ¼Æ«¬ºA¿ù»~¡C\n", ob->obname);
+    	error("(delete_temp) %s ç‰©ä»¶çš„è³‡æ–™åº«è®Šæ•¸åž‹æ…‹éŒ¯èª¤ã€‚\n", ob->obname);
     }
 
     map = value->u.map;
